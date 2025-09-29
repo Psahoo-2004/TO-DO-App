@@ -37,7 +37,7 @@ def test_get_one_posts(authorized_client,test_tasks):
     ("Task 3",False),
     ("Task 4",False)
 ])
-def test_create_post(authorized_client,test_user,test_tasks,title,completed):
+def test_create_task(authorized_client,test_user,test_tasks,title,completed):
     res=authorized_client.post("/todo/",json={"title":title,"completed":completed})
     create_task=schemas.ToDo(**res.json())
     assert res.status_code == 200

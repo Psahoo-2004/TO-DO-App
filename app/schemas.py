@@ -28,6 +28,7 @@ class ToDo(BaseModel):
 
 class CreateToDO(ToDo):
     pass
+
 class UpdateToDO(BaseModel):
     completed:bool=False
 

@@ -2,6 +2,7 @@ import pytest
 from app import schemas
 from jose import jwt 
 from app.config import settings
+
 @pytest.fixture
 def test_user(client):
     user_data={"email":"pratyush@gmail.com","password":"password123"}

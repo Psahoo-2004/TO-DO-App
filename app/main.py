@@ -5,12 +5,19 @@ from app.database import engine,get_db
 from sqlalchemy.orm import Session
 from . utils import hashed
 from .router import user,todo
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app=FastAPI()
+origins=["*"]
 
-Tasks={}
-
-models.Base.metadata.create_all(bind=engine)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(user.router)
 app.include_router(todo.router)
