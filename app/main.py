@@ -7,7 +7,7 @@ from . utils import hashed
 from .router import user,todo
 from fastapi.middleware.cors import CORSMiddleware
 
-models.Base.metadata.create_all(bind=engine)
+# models.Base.metadata.create_all(bind=engine)
 
 app=FastAPI()
 origins=["*"]
